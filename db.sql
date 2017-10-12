@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `department_name` varchar(255) NOT NULL DEFAULT '' COMMENT '所属部门',
   PRIMARY KEY (`employee_id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1515 DEFAULT CHARSET=utf8mb4 COMMENT='雇员信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='雇员信息';
 
 
 INSERT INTO `employees` (`employee_id`, `name`, `email`, `telephone`, `status`, `username`, `password`, `department_name`) VALUES
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='后台管理员表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='后台管理员表';
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', 'I87aP851O_LzH30H42BGJKtAlgJvTQzC', '$2y$13$9L0WfHOg.VPFIdGRD2Q1BOuip9blAI4/mFQEKs7No/BcetDN0SZly', NULL, 'admin@pangxieke.com', 1, 1494836360, 1494836360);
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `visitors` (
   `is_send_mobile` tinyint(1) NOT NULL DEFAULT '0' COMMENT '发送短信通知，默认0未发送，1为已发送',
   PRIMARY KEY (`id`),
   KEY `employee_id` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8mb4 COMMENT='访客表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='访客表';
 
 INSERT INTO `visitors` (`id`, `employee_id`, `location_id`, `user_name`, `id_card`, `company`, `num`, `type`, `email`, `telephone`, `info`, `created_at`, `updated_at`, `is_send_email`, `is_send_mobile`) VALUES
 	(127, 1, 1, '张三', '4290019901234', '阿里巴巴', 1, 2, '', '13800138000', '这是测试', '2017-10-10 19:28:37', '2017-10-10 19:28:37', 1, 0),

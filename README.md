@@ -19,8 +19,9 @@ composer update
 [http://envoy.pangxieke.com](http://envoy.pangxieke.com)
 
 后台[http://envoy.pangxieke.com/admin.php](http://envoy.pangxieke.com/admin.php)
-Account: admin
-Password: 123456
+
+Account: `admin`
+Password: `123456`
 
 ## 代码结构
 
